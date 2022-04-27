@@ -9,6 +9,7 @@ import Donation from './commponents/Pages/Donation/Donation';
 import Admin from './commponents/Pages/Admin/Admin';
 import Login from './commponents/Pages/Login/Login';
 import SignUp from './commponents/Pages/SignUp/SignUp';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/admin' element={<Admin></Admin>}></Route>
       </Routes>
+      <Toaster></Toaster>
     </div>
   );
 }
