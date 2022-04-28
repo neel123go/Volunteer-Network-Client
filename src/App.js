@@ -10,6 +10,9 @@ import Admin from './commponents/Pages/Admin/Admin';
 import Login from './commponents/Pages/Login/Login';
 import SignUp from './commponents/Pages/SignUp/SignUp';
 import { Toaster } from 'react-hot-toast';
+import RequiredAuth from './commponents/Pages/RequiredAuth/RequiredAuth';
+import DonateMsg from './commponents/Pages/DonateMsg/DonateMsg';
+import NotFound from './commponents/Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -18,12 +21,22 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/donation' element={<Donation></Donation>}></Route>
+        <Route path='/donation' element={
+          <RequiredAuth>
+            <Donation></Donation>
+          </RequiredAuth>
+        }></Route>
+        <Route path='/donatemsg' element={
+          <RequiredAuth>
+            <DonateMsg></DonateMsg>
+          </RequiredAuth>
+        }></Route>
         <Route path='/events' element={<Events></Events>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/admin' element={<Admin></Admin>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Toaster></Toaster>
     </div>
