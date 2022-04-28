@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './commponents/Pages/Home/Home';
 import Events from './commponents/Pages/Events/Events';
-import Blog from './commponents/Pages/Blog/Blog';
+import Donors from './commponents/Pages/Donors/Donors';
 import Donation from './commponents/Pages/Donation/Donation';
 import Admin from './commponents/Pages/Admin/Admin';
 import Login from './commponents/Pages/Login/Login';
@@ -13,6 +13,7 @@ import { Toaster } from 'react-hot-toast';
 import RequiredAuth from './commponents/Pages/RequiredAuth/RequiredAuth';
 import DonateMsg from './commponents/Pages/DonateMsg/DonateMsg';
 import NotFound from './commponents/Pages/Shared/NotFound/NotFound';
+import AddEvent from './commponents/Pages/AddEvent/AddEvent';
 
 function App() {
   return (
@@ -32,10 +33,11 @@ function App() {
           </RequiredAuth>
         }></Route>
         <Route path='/events' element={<Events></Events>}></Route>
-        <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/donors' element={<Donors></Donors>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/admin' element={<Admin></Admin>}></Route>
+        <Route path='/addevent' element={<AddEvent></AddEvent>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Toaster></Toaster>
